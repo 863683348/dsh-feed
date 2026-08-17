@@ -1,0 +1,9 @@
+# dsh-feed — bundle patch layer.
+- insert:
+    - id: feed
+      name: 'dsh-feed'
+      config:
+        file: '.dsh/dsh-feed.json'
+        limit: 5
+        githubTokenEnv: 'GITHUB_TOKEN'
+        sectionOrder: 5

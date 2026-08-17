@@ -1,0 +1,27 @@
+{
+  "name": "dsh-feed",
+  "version": "0.1.0",
+  "description": "Cross-ecosystem aggregation base ('聚合的聚合'): syncs the GitHub dsh-plugin topic + npm registry into one open JSON index, queried by model tools, a CLI (dsh-feed), and a minimal stdio MCP server",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": { "dsh-feed": "bin/dsh-feed.js" },
+  "exports": {
+    ".": "./lib/index.js",
+    "./query": "./lib/query.js",
+    "./sync": "./lib/sync.js",
+    "./index-store": "./lib/index-store.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "bin", "cordis.patch.yml", "README.md", "README.zh.md"],
+  "scripts": { "test": "node --test test/" },
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "cordis", "plugin", "feed", "index", "aggregation", "mcp", "数据源"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  }
+}
