@@ -78,12 +78,13 @@ function cmdMcp() {
       description: "Search the aggregated dsh plugin index by natural language.",
       inputSchema: {
         type: "object",
+        additionalProperties: true,
         properties: { query: { type: "string" }, limit: { type: "number" } },
         required: ["query"],
       },
     },
-    { name: "feed_stats", description: "Statistics over the dsh plugin index.", inputSchema: { type: "object" } },
-    { name: "feed_sync", description: "Rebuild the index from GitHub + npm (network).", inputSchema: { type: "object" } },
+    { name: "feed_stats", description: "Statistics over the dsh plugin index.", inputSchema: { additionalProperties: true, type: "object" } },
+    { name: "feed_sync", description: "Rebuild the index from GitHub + npm (network).", inputSchema: { additionalProperties: true, type: "object" } },
   ];
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
   rl.on("line", async (line) => {
